@@ -49,7 +49,8 @@
 
 
         // Run it
-        new Function("React", "ReactDOM", "module", "exports", wrapped)(React, ReactDOM, module, exports);
+        const compiled = Babel.transform(wrapped, { presets: ["react"] }).code;
+        new Function("React", "ReactDOM", "module", "exports", compiled)(React, ReactDOM, module, exports);
 
         const App = module.exports.default;
         const root = ReactDOM.createRoot(document.getElementById("root"));
