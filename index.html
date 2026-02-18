@@ -44,8 +44,8 @@
         const module = { exports };
 
         // Wrap the code so "export default" becomes module.exports.default
-        const wrapped = code
-          .replace(/export default function App\\s*\\(/, "module.exports.default = function App(");
+        const wrapped = code.replace("export default function App(", "module.exports.default = function App(");
+
 
         // Run it
         new Function("React", "ReactDOM", "module", "exports", wrapped)(React, ReactDOM, module, exports);
