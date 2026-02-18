@@ -1,5 +1,5 @@
-import React, { useEffect, useMemo, useRef, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+const { useEffect, useMemo, useRef, useState } = React;
+const { motion, AnimatePresence } = window.FramerMotion;
 
 /**
  * Living Dex Tracker (single-file React app)
